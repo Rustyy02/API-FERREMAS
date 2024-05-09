@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Producto</title>
+</head>
+<body>
+    <h1>Detalles del Producto</h1>
+    <p><strong>id:</strong> {{ producto.codigoProducto }}</p>
+    <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+    <p><strong>Marca:</strong> {{ producto.marca }}</p>
+    <p><strong>Precio:</strong> {{ producto.precio }}</p>
+    <p><strong>Stock:</strong> {{producto.stock_estado }}</p>
+    <a href="{% url 'catalogo' %}">Volver al listado de productos</a>
+</body>
+</html>
