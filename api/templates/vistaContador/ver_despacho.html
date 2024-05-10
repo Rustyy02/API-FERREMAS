@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Pedidos</title>
+</head>
+<body>
+    <h1>Detalles de Pedido</h1>
+    <h4>Vista Contador</h4>
+    <p><strong>Solicitud:</strong> {{ solicitud.soli }}</p>
+    <p><strong>Estado del Pedido:</strong> {{ solicitud.estado_pedido  }}</p>
+    <p><strong>Estado del Pago:</strong> {{ solicitud.pago_realizado  }}</p>
+    <a href="{% url 'lista_despachos' %}">Volver al listado de despachos</a>
+    <a href="{% url 'actualizar_pedido'  pk=2 %}"><button>actualizar pedido</button></a>
+    <a href="{% url 'lista_despachos' %}">Volver a lista de despachos</a>
+</body>
+</html>

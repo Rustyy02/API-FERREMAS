@@ -11,6 +11,10 @@ class Producto(models.Model):
     
     
 class Compra(models.Model):
+    METODO_ENTREGA = {
+        "D": "Despacho a Domicilio",
+        "R": "Retiro en Tienda",
+    }
     METODO_PAGO = {
         "C": "Credito",
         "D": "Debito",
@@ -19,15 +23,18 @@ class Compra(models.Model):
     product = models.ForeignKey(Producto,null=True,blank=True,on_delete=models.CASCADE)
     cantidad = models.PositiveBigIntegerField()
     metodo_pago = models.CharField(max_length=1, choices=METODO_PAGO) 
+    metodo_entrega = models.CharField(max_length=1, choices=METODO_ENTREGA,default="Despacho a Domicilio") 
 
 class Solicitud(models.Model):
     ESTADO_PEDIDO = {
         "P": "Pedido en Proceso",
         "R": "Pedido rechazado",
         "E": "Pedido enviado",
+        "D": "Pedido Despachado"
     }
     soli = models.ForeignKey(Compra,null=True,blank=True,on_delete=models.CASCADE)
     estado_pedido = models.CharField(max_length=1, choices=ESTADO_PEDIDO) 
+    pago_realizado= models.BooleanField(default=True)
     
 
 class Cliente(models.Model):

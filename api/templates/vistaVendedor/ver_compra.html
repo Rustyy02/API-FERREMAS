@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Compra</title>
+</head>
+<body>
+    <h1>Detalles de la Compra</h1>
+    <h4>Vista Vendedor</h4>
+    <p><strong>Producto:</strong> {{ compra.product }}</p>
+    <p><strong>Cantidad:</strong> {{ compra.cantidad }}</p>
+    <p><strong>Metodo de Pago:</strong> {{ compra.metodo_pago }}</p>
+    <a href="{% url 'lista_compras' %}">Volver al listado de productos</a>
+    <a href="{% url 'crear_solicitud' %}"><button>Crear Solicitud a Bodega</button></a>
+</body>
+</html>
+

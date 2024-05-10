@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+<p>Crear Vendedor <a href="{% url 'crear_vendedor'%}"><button>Crear cuenta</button></a></p>
+<p>Funciones Vendedor <a href="{% url 'lista_compras'%}"><button>Ir</button></a></p>
+<p>Crear Bodeguero <a href="{% url 'crear_bodeguero' %}"><button>Crear cuenta</button></a></p>
+<p>Funciones Bodeguero <a href="{% url 'solicitudes'%}"><button>Ir</button></a></p>
+<p>Crear Contador <a href="{% url 'crear_contador' %}"><button>Crear cuenta</button></a></p>
+<p>Funciones Contador <a href="{% url 'lista_despachos'%}"><button>Ir contador</button></a></p>
+<p>CRUD PRODUCTOS <a href="{% url 'lista_productos' %}"><button>Ir</button></a></p>
+<a href="{% url 'home' %}">Volver al home</a>
+</body>
+</html>

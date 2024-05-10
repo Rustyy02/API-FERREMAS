@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Solicitud</title>
+</head>
+<body>
+    <h1>Detalles de la Solicitud</h1>
+    <h4>Vista Bodeguero</h4>
+    <p><strong>Solicitud:</strong> {{ solicitud.soli }}</p>
+    <p><strong>Estado del Pedido:</strong> {{ solicitud.estado_pedido  }}</p>
+    <a href="{% url 'solicitudes' %}">Volver al listado de solicitudes</a>
+</body>
+</html>

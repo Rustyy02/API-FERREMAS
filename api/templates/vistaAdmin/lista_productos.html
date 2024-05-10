@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Productos </h1>
+    <h4>Vista Admin</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo Producto</th>
+                <th>nombre</th>
+                <th>marca</th>
+                <th>precio</th>
+                <th>stock estado</th>
+                <th>stock cantidad</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.codigoProducto }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.marca }}</td>
+                <td>{{ producto.precio }}</td>
+                <td>{{ producto.stock_estado }}</td>
+                <td>{{ producto.stock_cantidad }}</td>
+
+                <td>
+                    <a href="{% url 'crear_producto' %}"><button>Crear Producto</button></a>
+                    <a href="{% url 'editar_productos'  pk=1 %}"><button>Editar Producto</button></a>
+                    <a href="{% url 'borrar_productos' pk=2 %}"><button>Borrar Producto</button></a>
+                </td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'vistaAdmin' %}">Volver vista Admin</a>
+</body>
+</html>

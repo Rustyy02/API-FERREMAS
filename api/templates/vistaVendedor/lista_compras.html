@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras Efectuadas</title>
+</head>
+<body>
+    <h1>Compras Efectuadas</h1>
+    <h4>Vista Vendedor</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Metodo de Pago</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compra in compras %}
+            <tr>
+                <td>{{ compra.product }}</td>
+                <td>{{ compra.cantidad }}</td>
+                <td>{{ compra.metodo_pago }}</td>
+                <td>
+                    <a href="{% url 'ver_compra' pk=1 %}"><button>Ver</button></a>
+                    <a href="{% url 'rechazar_compra' pk=2 %}"><button>Rechazar compra</button></a>
+                </td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'vistaAdmin' %}">Volver vista admin</a>
+</body>
+</html>

@@ -23,13 +23,17 @@
                 <td>{{ producto.marca }}</td>
                 <td>{{ producto.precio }}</td>
                 <td>{{ producto.stock_estado }}</td>
+                
                 <td>
                     <a href="{% url 'ver_detalle' pk=1 %}"><button>Ver</button></a>
                 </td>
                 
             </tr>
+
             {% endfor %}
         </tbody>
     </table>
+    <a href="{% url 'home' %}"><button>cerrar sesion</button></a>
 </body>
+
 </html>
