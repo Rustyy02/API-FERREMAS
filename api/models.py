@@ -2,7 +2,7 @@ from django.db import models
 
 # Create de todo asociado a productos.
 class Producto(models.Model):
-    codigoProducto = models.BigAutoField(primary_key=True, default=1, unique=True)
+    codigoProducto = models.BigAutoField(primary_key=True, unique=True)
     nombre = models.CharField(max_length=80)
     marca = models.CharField(max_length=50)
     precio = models.PositiveBigIntegerField()
