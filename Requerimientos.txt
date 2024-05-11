@@ -1,0 +1,12 @@
+Requerimientos:
+
+En CMD como administrador
+
+Django 5.0.6
+
+py -m pip install Django==5.0.6
+
+Django Rest Framework
+
+pip install djangorestframework
+
