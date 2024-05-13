@@ -73,5 +73,5 @@ class Vendedor(models.Model):
     celular = models.PositiveBigIntegerField()
     correo = models.CharField(max_length=80)
     direccion = models.CharField(max_length=80)
-    estado_pedido = models.CharField(max_length=1, choices=CARGO) 
+    cargo = models.CharField(max_length=1, choices=CARGO)
     
