@@ -16,5 +16,15 @@ Solo es necesario abrir un terminal en la carpeta raíz por defecto (API-FERREMA
 | Django Rest Framework | 3.15.1 |
 | Django Crispy Forms     | 2.1 |
 | Crispy Bootstrap4      | 2024.1 |
-| Backtick | `         |
-| Pipe     | \|        |
+| Bootstrap4 | --- |
+
+Luego de esto, es necesario iniciar una instancia local para visualizar la API en un explorador web con el siguiente comando:
+
+```
+py manage.py runserver
+```
+
+Esto iniciará una instancia local en la dirección:
+
+http://127.0.0.1:8000/
+
