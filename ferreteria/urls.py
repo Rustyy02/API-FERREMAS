@@ -21,7 +21,7 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('api.urls')),
-    path('home/', views.home, name='home'),
+    path('', views.home, name='home'),
     path('vistaAdmin/', views.vistaAdmin, name='vistaAdmin'),
     
     path('api-auth/', include('rest_framework.urls')),
