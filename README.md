@@ -5,7 +5,7 @@ Para el despliegue de la API se generó un archivo llamado requirements.txt el c
 Solo es necesario abrir un terminal en la carpeta raíz por defecto (API-FERREMAS) y luego ejecutar el siguiente código:
 
 ```
--pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 **Requerimientos principales utilizados:**
