@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<p>Vista Admin <a href="{% url 'vistaAdmin' %}"><button>Ver</button></a></p>
-<p>Crear Cuenta Cliente <a href="{% url 'crear_sesion' %}"><button>Registrarse</button></a></p>
-<p>Iniciar sin Logearse <a href="{% url 'catalogo' %}"><button>iniciar</button></a></p>
+<h1 class="text-center"> Ferremas <span class="badge text-bg-primary">Home</span> </h1> 
+<br>
+
+<div class="container text-center p-3 mb-2 bg-primary-subtle text-primary-emphasis">
+    <div class="row">
+      <div class="col">
+        <p>Vista Admin </p>
+      </div>
+      <div class="col">
+        <p>Crear Cuenta Cliente</p>
+      </div>
+      <div class="col">
+        <p>Iniciar sin Logearse</p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+        <a href="{% url 'vistaAdmin' %}"><button type="button" class="btn btn-light">Ver</button></a>
+        </div>
+        <div class="col">
+          <a href="{% url 'crear_sesion' %}"><button type="button" class="btn btn-light">Registrarse</button></a>
+        </div>
+        <div class="col">
+          <a href="{% url 'catalogo' %}"><button type="button" class="btn btn-light">Iniciar</button></a>
+        </div>
+      </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>
