@@ -2,12 +2,18 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from . import models
 from .factories import MyModelFactory
+import factory
 
 class MyModelIntegrationTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.mymodel1 = MyModelFactory(name="test1", value=1)
-        self.mymodel2 = MyModelFactory(name="test2", value=2)
+        self.mymodel1 = MyModelFactory(codigoProducto = factory.Sequence(lambda n: f'prueba1{n}'),
+    nombre = factory.Sequence(lambda n: n),
+    marca = factory.Sequence(lambda n: f'prueba1{n}'),
+    precio = factory.Sequence(lambda n: n),
+    stock_estado = factory.Sequence(lambda n: n),
+    stock_cantidad = factory.Sequence(lambda n: n))
+        
 
     def prueba_vista_modelo_Producto(self):
         """Prueba la vista de lista de MyModel"""
