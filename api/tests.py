@@ -28,12 +28,12 @@ class ProductoIntegrationTest(TestCase):
         """Prueba la creación de MyModel a través de la vista de creación"""
         response = self.client.post(reverse('crear_producto'), {
             
-            'codigoProducto': 7,
-            'nombre': 'Martillo',
-            'marca': 'Baunker',
-            'precio': 5000,
-            'stock_estado': True,
-            'stock_cantidad': 4
+                'codigoProducto': 7,
+                'nombre': 'Martillo',
+                'marca': 'Baunker',
+                'precio': 5000,
+                'stock_estado': True,
+                'stock_cantidad': 4
 
         })
         
@@ -143,8 +143,8 @@ class ClienteIntegrationTest(TestCase):
         """Prueba la creación de cliente a través de la vista de creación"""
         response = self.client.post(reverse('crear_sesion'), {
             
-            'nombre' : "Sergio",
-            'apellido' : "Aracena",
+            'nombre' : "Martin",
+            'apellido' : "casas",
             'edad' : 22,
             'celular' : 942909645,
             'correo' : "sergio@duocuc.cl",
@@ -178,8 +178,8 @@ class VendedorIntegrationTest(TestCase):
         """Prueba la creación de Vendedor a través de la vista de creación"""
         response = self.client.post(reverse('crear_vendedor'), {
             
-            'nombre' : "Sergio",
-            'apellido' : "Aracena",
+            'nombre' : "Martin",
+            'apellido' : "casas",
             'edad' : 22,
             'celular' : 942909645,
             'correo' : "sergio@duocuc.cl",
@@ -213,8 +213,8 @@ class BodegueroIntegrationTest(TestCase):
         """Prueba la creación de  Bodeguero a través de la vista de creación"""
         response = self.client.post(reverse('crear_bodeguero'), {
             
-            'nombre' : "Sergio",
-            'apellido' : "Aracena",
+            'nombre' : "Martin",
+            'apellido' : "casas",
             'edad' : 22,
             'celular' : 942909645,
             'correo' : "sergio@duocuc.cl",
@@ -247,8 +247,8 @@ class ContadorIntegrationTest(TestCase):
         """Prueba la creación de Contador a través de la vista de creación"""
         response = self.client.post(reverse('crear_contador'), {
             
-            'nombre' : "Sergio",
-            'apellido' : "Aracena",
+            'nombre' : "Martin",
+            'apellido' : "casas",
             'edad' : 22,
             'celular' : 942909645,
             'correo' : "sergio@duocuc.cl",
