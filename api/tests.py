@@ -2,6 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from . import models
 from .models import Producto,Compra,Solicitud,Cliente,Contador,Bodeguero,Vendedor
+from .forms import ProductoForm,ClienteForm
 from .factories import MyModelFactory
 import factory
 
@@ -155,6 +156,8 @@ class ClienteIntegrationTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(models.Cliente.objects.count(), 2)
         self.assertTrue(models.Cliente.objects.filter(nombre='Martin').exists())
+        
+
 #vendedor
 class VendedorIntegrationTest(TestCase):
     def setUp(self):
@@ -259,3 +262,56 @@ class ContadorIntegrationTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(models.Contador.objects.count(), 2)
         self.assertTrue(models.Contador.objects.filter(nombre='Martin').exists())
+
+#PRUEBA UNITARIA PRODUCTO FORMS Y CLIENTE FORMS
+class ProductoFormTest(TestCase):
+
+    def test_form_valido(self):
+        form_data = {
+              'codigoProducto': 7,
+                'nombre': 'Martillo',
+                'marca': 'Baunker',
+                'precio': 5000,
+                'stock_estado': True,
+                'stock_cantidad': 4
+        }
+        form = ProductoForm(data=form_data)
+        self.assertTrue(form.is_valid())
+
+    def test_form_invalido(self):
+        form_data = {
+              'codigoProducto': 3,
+                'nombre': '',
+                'marca': '',
+                'precio': 2,
+                'stock_estado': False,
+                'stock_cantidad': 4
+        }
+        form = ProductoForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        
+class ClienteFormTest(TestCase):
+
+    def test_form_valido(self):
+        form_data = {
+            'nombre' : "Martin",
+            'apellido' : "casas",
+            'edad' : 22,
+            'celular' : 942909645,
+            'correo' : "sergio@duocuc.cl",
+            'direccion' : "valpo"
+        }
+        form = ClienteForm(data=form_data)
+        self.assertTrue(form.is_valid())
+
+    def test_form_invalido(self):
+        form_data = {
+             'nombre' : "",
+            'apellido' : "",
+            'edad' : 5,
+            'celular' : 942909645,
+            'correo' : "@duocuc.cl",
+            'direccion' : ""
+        }
+        form = ClienteForm(data=form_data)
+        self.assertFalse(form.is_valid())
